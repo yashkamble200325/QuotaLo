@@ -1,0 +1,6 @@
+{
+  "name": "QuotaLo - Premium Car Quotations",
+  "description": "Professional car quotation and test drive booking platform with role-based access for Admins, Dealers, and Users.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

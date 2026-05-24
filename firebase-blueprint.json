@@ -1,0 +1,126 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Information about a registered user, admin, or dealer.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "dealer", "user"] },
+        "phone": { "type": "string" },
+        "joinedDate": { "type": "string" },
+        "status": { "type": "string", "enum": ["Active", "Inactive"] },
+        "avatar": { "type": "string" }
+      },
+      "required": ["email", "name", "role"]
+    },
+    "Car": {
+      "title": "Car",
+      "description": "Details of a vehicle available for test drive or quotation.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "dealer": { "type": "string" },
+        "fuelType": { "type": "string" },
+        "transmission": { "type": "string" },
+        "image": { "type": "string" },
+        "variant": { "type": "string" },
+        "engine": { "type": "string" },
+        "mileage": { "type": "string" },
+        "seating": { "type": "string" },
+        "stockStatus": { "type": "string", "enum": ["In Stock", "Out of Stock"] },
+        "baseExShowroomPrice": { "type": "number" },
+        "rtoCharges": { "type": "number" },
+        "insuranceAmount": { "type": "number" },
+        "fastagCharges": { "type": "number" },
+        "handlingCharges": { "type": "number" },
+        "accessoriesPackage": { "type": "number" },
+        "extendedWarranty": { "type": "number" },
+        "discountOffer": { "type": "number" },
+        "exchangeBonus": { "type": "number" },
+        "corporateDiscount": { "type": "number" }
+      },
+      "required": ["name", "price", "dealer", "image", "baseExShowroomPrice", "rtoCharges", "insuranceAmount"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "A test drive booking record.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "carId": { "type": "string" },
+        "carName": { "type": "string" },
+        "dealerId": { "type": "string" },
+        "dealerName": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "status": { "type": "string", "enum": ["Pending", "Confirmed", "Completed", "Cancelled"] },
+        "phone": { "type": "string" },
+        "type": { "type": "string", "enum": ["Showroom", "Home"] }
+      },
+      "required": ["userId", "userName", "carId", "carName", "dealerId", "dealerName", "date", "time", "status", "phone", "type"]
+    },
+    "Quotation": {
+      "title": "Quotation",
+      "description": "A professional price quotation record.",
+      "type": "object",
+      "properties": {
+        "quotationId": { "type": "string" },
+        "userId": { "type": "string" },
+        "carId": { "type": "string" },
+        "dealerId": { "type": "string" },
+        "carName": { "type": "string" },
+        "dealerName": { "type": "string" },
+        "date": { "type": "string" },
+        "finalOnRoadPrice": { "type": "number" },
+        "priceBreakdown": { "type": "object" },
+        "quoteValidUntil": { "type": "object" },
+        "qrCodeData": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["quotationId", "userId", "carId", "carName", "dealerName", "finalOnRoadPrice", "priceBreakdown"]
+    },
+    "Dealer": {
+      "title": "Dealer",
+      "description": "A car dealership entity.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "dealership": { "type": "string" },
+        "status": { "type": "string", "enum": ["Verified", "Pending"] },
+        "logo": { "type": "string" },
+        "gst": { "type": "string" },
+        "pan": { "type": "string" },
+        "address": { "type": "string" },
+        "phone": { "type": "string" }
+      },
+      "required": ["name", "email", "dealership", "status"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "Collection of all users."
+    },
+    "cars": {
+      "schema": "Car",
+      "description": "Collection of all vehicles."
+    },
+    "bookings": {
+      "schema": "Booking",
+      "description": "Collection of all test drive bookings."
+    },
+    "quotations": {
+      "schema": "Quotation",
+      "description": "Collection of all quotations."
+    },
+    "dealers": {
+      "schema": "Dealer",
+      "description": "Collection of all dealerships."
+    }
+  }
+}
