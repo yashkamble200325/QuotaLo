@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
@@ -18,3 +19,7 @@ View your app in AI Studio: https://ai.studio/apps/e0228d4c-6d55-4f76-8521-ae558
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+=======
+# QuotaLo
+Car quotation and test drive booking platform built with React, Vite, Firebase, and Tailwind CSS.
+>>>>>>> 4532bef4eb3894afd396a9d1bc66c6160e9a0b17
